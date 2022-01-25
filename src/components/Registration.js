@@ -2,7 +2,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 
-export default function Registration() {
+export default function Registration(props) {
+  const { players, setPlayers } = props;
   let navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -15,9 +16,11 @@ export default function Registration() {
       name: name,
       surname: surname,
       email: email,
-      password: password
+      password: password,
+      points: 0
     }
     console.log(JSON.stringify(newMember));
+    setPlayers(players => [...players, newMember]);
     navigate({
       pathname: 'welcome'
     });

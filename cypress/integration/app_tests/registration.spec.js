@@ -15,4 +15,15 @@ describe('Registration Page', () => {
     cy.contains('Submit').click()
     cy.contains('Welcome')
   })
+  
+  it('shows the new player in the welcome page list', () => {
+    cy.visit('/')
+    cy.get('#formBasicName').type('New')
+    cy.get('#formBasicSurname').type('Guy')
+    cy.get('#formBasicEmail').type('fake@email.com')
+    cy.get('#formBasicPassword').type('fake_password')
+    cy.get('#formBasicPasswordConfirmation').type('fake_password')
+    cy.contains('Submit').click()
+    cy.contains('New Guy')
+  })
 })
