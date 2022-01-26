@@ -6,8 +6,8 @@ describe('Registration Page', () => {
     cy.get('#formBasicSurname').should('be.visible')
     cy.get('#formBasicEmail').should('be.visible')
     cy.get('#formNationality').should('be.visible');
-    cy.get('#formBasicPassword').should('be.visible')
-    cy.get('#formBasicPasswordConfirmation').should('be.visible')
+    cy.get('#password').should('be.visible')
+    cy.get('#password-confirm').should('be.visible')
     cy.contains('Submit').should('be.visible');
   })
 
@@ -23,11 +23,23 @@ describe('Registration Page', () => {
     cy.get('#formBasicSurname').type('Guy')
     cy.get('#formBasicEmail').type('fake@email.com')
     cy.get('select').select('Venezuela')
-    cy.get('#formBasicPassword').type('fake_password')
-    cy.get('#formBasicPasswordConfirmation').type('fake_password')
+    cy.get('#password').type('fake_password')
+    cy.get('#password-confirm').type('fake_password')
     cy.contains('Submit').click()
     cy.contains('New Guy')
     cy.contains('Venezuela')
     cy.contains('0 points')
+  })
+
+  it('should not submit form if passwords do not match', () => {
+    cy.visit('/')
+    cy.get('#formBasicName').type('New')
+    cy.get('#formBasicSurname').type('Guy')
+    cy.get('#formBasicEmail').type('fake@email.com')
+    cy.get('select').select('Venezuela')
+    cy.get('#password').type('fake_password')
+    cy.get('#password-confirm').type('different_password')
+    cy.contains('Submit').click()
+    cy.contains('Password')
   })
 })

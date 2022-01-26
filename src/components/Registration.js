@@ -3,11 +3,22 @@ import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import useCountries from '../hooks/useCountries';
 import CountryOption from './CountryOption';
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
+import { useState } from 'react';
 
 export default function Registration(props) {
   const { players, setPlayers } = props;
+  const [passwordValue, setPasswordValue] = useState('');
+  const [passwordConfirmValue, setPasswordConfirmValue] = useState('');
+
+  const pwChange = (event) => {
+    const pwElement = event.target.parentElement.querySelector("#password");
+    const pwConfirmElement = event.target.parentElement.querySelector("#password-confirm");
+    pwConfirmElement.setCustomValidity(passwordMatch(pwElement.value, pwConfirmElement.value) ? '' : 'Passwords must match');
+  }
+
   let navigate = useNavigate();
+
   const passwordMatch = (pw, pwConfirm) => {
     return pw === pwConfirm
   };
@@ -71,13 +82,13 @@ export default function Registration(props) {
             {countryOptions}
           </Form.Select>
         </Form.Group>
-        <Form.Group className="mb-1" controlId="formBasicPassword">
+        <Form.Group className="mb-1" id="password-group" onChange={pwChange}>
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" name="password" required/>
-        </Form.Group>
-        <Form.Group className="mb-1" controlId="formBasicPasswordConfirmation">
+            <Form.Control id="password" type="password" placeholder="Password" name="password" default="" required/>
+        {/* </Form.Group>
+        <Form.Group className="mb-1" controlId="formBasicPasswordConfirmation"> */}
           <Form.Label>Confirm Password</Form.Label>
-          <Form.Control type="password" placeholder="Confirm Password" name="passwordconfirm" required/>
+          <Form.Control id="password-confirm" type="password" placeholder="Confirm Password" name="passwordconfirm" default="" required/>
         </Form.Group>
         <Button type="submit" id="button">
           Submit
