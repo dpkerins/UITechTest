@@ -14,6 +14,7 @@ export default function Welcome(props) {
       <Player player={player}/>
     )
   })
+  console.log(playerDivList);
 
   return (
     <div className="welcome">
@@ -23,6 +24,7 @@ export default function Welcome(props) {
         <Row>
           <Col><h3>Players</h3></Col>
           <Col><h3>Scores</h3></Col>
+          <Col><h3>Nationality</h3></Col>
         </Row>
         {playerDivList}
       </div>

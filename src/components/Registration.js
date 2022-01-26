@@ -1,6 +1,8 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
+import useCountries from '../hooks/useCountries';
+import CountryOption from './CountryOption';
 
 export default function Registration(props) {
   const { players, setPlayers } = props;
@@ -9,12 +11,20 @@ export default function Registration(props) {
     return pw === pwConfirm
   };
 
+  const [countries] = useCountries();
+  const countryOptions = countries.map((country) => {
+    return (
+      <CountryOption country={country}/>
+    )
+  })
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
     const name = form.name.value;
     const surname = form.surname.value;
     const email = form.email.value;
+    const nationality = form.nationality.value;
     const password = form.password.value;
     const passwordConfirm = form.passwordconfirm.value;
 
@@ -24,6 +34,7 @@ export default function Registration(props) {
         surname: surname,
         email: email,
         password: password,
+        nationality: nationality,
         points: 0
       }
       console.log(JSON.stringify(newMember));
@@ -50,6 +61,13 @@ export default function Registration(props) {
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" name="email" required/>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formNationality">
+          <Form.Label>Nationality</Form.Label>
+          <Form.Select name="nationality" aria-label="Nationality select" required options={countries}>
+            <option></option>
+            {countryOptions}
+          </Form.Select>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>

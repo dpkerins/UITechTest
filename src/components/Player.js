@@ -11,6 +11,9 @@ export default function Player(props) {
       <Col>
         <p>{player.points} points</p>
       </Col>
+      <Col>
+        <p>{player.nationality}</p>
+      </Col>
     </Row>
   )
 }

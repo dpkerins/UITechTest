@@ -13,19 +13,22 @@ function App() {
     name: "Bob",
     surname: "Jones",
     email: "bob@jones.com",
-    points: 100
+    points: 100,
+    nationality: 'China'
     },
     {
     name: "Tina",
     surname: "Smith",
     email: "tina@smith.com",
-    points: 125
+    points: 125,
+    nationality: 'Peru'
     },
     {
       name: "Saanvi",
       surname: "Gupta",
       email: "saanvi@gupta.com",
-      points: 110
+      points: 110,
+      nationality: 'Lithuania'
     }
   ])
 
