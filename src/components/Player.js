@@ -5,13 +5,13 @@ export default function Player(props) {
   const { player } = props;
   return (
     <Row>
-      <Col>
+      <Col xs={4}>
         <p>{player.name} {player.surname}</p>
       </Col>
-      <Col>
+      <Col xs={4}>
         <p>{player.points} points</p>
       </Col>
-      <Col>
+      <Col xs={4}>
         <p>{player.nationality}</p>
       </Col>
     </Row>

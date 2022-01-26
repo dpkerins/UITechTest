@@ -20,6 +20,6 @@ export default function NavBar() {
         <Nav.Link as={Link} to="/">Registration</Nav.Link>
         <Nav.Link as={Link} to="welcome">Welcome</Nav.Link>
       </Nav>
-  </Navbar>
+    </Navbar>
   )
 }

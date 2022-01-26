@@ -35,7 +35,7 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <Container>
+      <Container style={{ padding: "10px" }}>
         <Routes>
           <Route path="/" element={<Registration players={players} setPlayers={setPlayers}/>} />
           <Route path="/welcome" element={<Welcome players={players}/>} />

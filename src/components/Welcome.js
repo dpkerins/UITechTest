@@ -22,9 +22,9 @@ export default function Welcome(props) {
       <p>Here is a list of all our current members and their rankings!</p>
       <div>
         <Row>
-          <Col><h3>Players</h3></Col>
-          <Col><h3>Scores</h3></Col>
-          <Col><h3>Nationality</h3></Col>
+          <Col xs={4}><h3>Players</h3></Col>
+          <Col xs={4}><h3>Scores</h3></Col>
+          <Col xs={4}><h3>Nationality</h3></Col>
         </Row>
         {playerDivList}
       </div>
