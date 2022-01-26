@@ -16,7 +16,7 @@ export default function NavBar() {
         {' '}
         Tennis Club
       </Navbar.Brand>
-      <Nav className="me-auto">
+      <Nav className="me-auto navbar">
         <Nav.Link as={Link} to="/">Registration</Nav.Link>
         <Nav.Link as={Link} to="welcome">Welcome</Nav.Link>
       </Nav>
