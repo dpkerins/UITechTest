@@ -4,6 +4,7 @@ import Registration from './components/Registration';
 import Welcome from './components/Welcome';
 import { useState } from 'react';
 import NavBar from './components/NavBar';
+import { Container } from 'react-bootstrap';
 
 
 function App() {
@@ -31,10 +32,12 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Registration players={players} setPlayers={setPlayers}/>} />
-        <Route path="/welcome" element={<Welcome players={players}/>} />
-      </Routes>
+      <Container>
+        <Routes>
+          <Route path="/" element={<Registration players={players} setPlayers={setPlayers}/>} />
+          <Route path="/welcome" element={<Welcome players={players}/>} />
+        </Routes>
+      </Container>
     </Router>
   );
 }

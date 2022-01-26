@@ -1,4 +1,6 @@
 import Player from './Player';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 export default function Welcome(props) {
   const { players } = props;
@@ -9,19 +11,21 @@ export default function Welcome(props) {
 
   const playerDivList = players.map((player) => {
     return (
-      <div>
-        <Player player={player}/>
-      </div>
+      <Player player={player}/>
     )
   })
 
   return (
     <div className="welcome">
       <h1>Welcome</h1>
+      <p>Here is a list of all our current members and their rankings!</p>
       <div>
-        <h2>Player Rankings</h2>
+        <Row>
+          <Col><h3>Players</h3></Col>
+          <Col><h3>Scores</h3></Col>
+        </Row>
         {playerDivList}
       </div>
-    </div>    
+    </div>
   )
 }

@@ -1,9 +1,16 @@
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row'
+
 export default function Player(props) {
   const { player } = props;
   return (
-    <div>
-      <p>{player.name} {player.surname}</p>
-      <p>{player.points} points</p>
-    </div>
+    <Row>
+      <Col>
+        <p>{player.name} {player.surname}</p>
+      </Col>
+      <Col>
+        <p>{player.points} points</p>
+      </Col>
+    </Row>
   )
 }
