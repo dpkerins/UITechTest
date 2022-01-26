@@ -33,6 +33,7 @@ function App() {
   ])
 
   return (
+    <div id="bootstrap-overrides">
     <Router>
       <NavBar />
       <Container style={{ padding: "10px" }}>
@@ -42,6 +43,7 @@ function App() {
         </Routes>
       </Container>
     </Router>
+    </div>
   );
 }
 

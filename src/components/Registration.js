@@ -63,30 +63,28 @@ export default function Registration(props) {
       <Card style={{ padding: '15px' }} >
       <Card.Header><h1>Registration</h1></Card.Header>
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-1" controlId="formBasicName">
+        <Form.Group controlId="formBasicName">
           <Form.Label>Name</Form.Label>
           <Form.Control type="name" placeholder="Name" name="name" required />
         </Form.Group>
-        <Form.Group className="mb-1" controlId="formBasicSurname">
+        <Form.Group controlId="formBasicSurname">
           <Form.Label>Surname</Form.Label>
           <Form.Control type="text" placeholder="Surname" name="surname" required />
         </Form.Group>
-        <Form.Group className="mb-1" controlId="formBasicEmail">
+        <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" name="email" required/>
         </Form.Group>
-        <Form.Group className="mb-1" controlId="formNationality">
+        <Form.Group controlId="formNationality">
           <Form.Label>Nationality</Form.Label>
           <Form.Select name="nationality" aria-label="Nationality select" required options={countries}>
             <option></option>
             {countryOptions}
           </Form.Select>
         </Form.Group>
-        <Form.Group className="mb-1" id="password-group" onChange={pwChange}>
+        <Form.Group id="password-group" onChange={pwChange}>
           <Form.Label>Password</Form.Label>
-            <Form.Control id="password" type="password" placeholder="Password" name="password" default="" required/>
-        {/* </Form.Group>
-        <Form.Group className="mb-1" controlId="formBasicPasswordConfirmation"> */}
+          <Form.Control id="password" type="password" placeholder="Password" name="password" default="" required/>
           <Form.Label>Confirm Password</Form.Label>
           <Form.Control id="password-confirm" type="password" placeholder="Confirm Password" name="passwordconfirm" default="" required/>
         </Form.Group>

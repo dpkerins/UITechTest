@@ -1,54 +1,44 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-h1,h2,h3,h4 {
+#bootstrap-overrides h1,
+#bootstrap-overrides h2,
+#bootstrap-overrides h3,
+#bootstrap-overrides h4 {
   color: #b81312;
   font-family: knockout70,Arial,Helvetica,sans-serif;
+  font-weight: bold;
 }
 
-.navbar-brand:hover,.nav-link:hover {
-  background-color: rgb(184, 19, 18, 0.75);
+#bootstrap-overrides .navbar-brand:hover,
+#bootstrap-overrides .nav-link:hover {
+  color: rgb(184, 19, 18);
+  font-weight: bold;
 }
 
 #button {
   background-color: rgb(184, 19, 18);
   border: 0;
+  margin-top: 8px;
+}
+
+#bootstrap-overrides .form-label {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+#bootstrap-overrides input:hover,
+#bootstrap-overrides input:focus,
+#bootstrap-overrides select:hover,
+#bootstrap-overrides select:focus {
+  box-shadow: 0 0 0 0.25rem rgb(184, 19, 18, .50);
+  border: 1px solid rgb(184, 19, 18, .50);
+}
+
+@media only screen and (max-width: 600px) {
+  #bootstrap-overrides h4 {
+    font-size: 16px;
+  }
+  #bootstrap-overrides p {
+    font-size: 13px;
+  }
 }
 
 
