@@ -4,20 +4,16 @@ import { useNavigate } from 'react-router-dom';
 import useCountries from '../hooks/useCountries';
 import CountryOption from './CountryOption';
 import Card from 'react-bootstrap/Card';
-import { useState } from 'react';
 
 export default function Registration(props) {
-  const { players, setPlayers } = props;
-  const [passwordValue, setPasswordValue] = useState('');
-  const [passwordConfirmValue, setPasswordConfirmValue] = useState('');
+  const { setPlayers } = props;
+  let navigate = useNavigate();
 
   const pwChange = (event) => {
     const pwElement = event.target.parentElement.querySelector("#password");
     const pwConfirmElement = event.target.parentElement.querySelector("#password-confirm");
     pwConfirmElement.setCustomValidity(passwordMatch(pwElement.value, pwConfirmElement.value) ? '' : 'Passwords must match');
   }
-
-  let navigate = useNavigate();
 
   const passwordMatch = (pw, pwConfirm) => {
     return pw === pwConfirm
