@@ -44,6 +44,7 @@ export default function Welcome(props) {
       <p>Here is a list of all our current members and their rankings!</p>
       <div>
         <div className="select-div">
+          <span>Sort Players by: </span>
           <select onChange={event => { setSortMethod(event.currentTarget.value) }}>
             <option value="rank">Rank</option>
             <option value="name">Name</option>

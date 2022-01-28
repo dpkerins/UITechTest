@@ -43,8 +43,9 @@
 }
 
 .select-div select {
-  border: 1px solid rgb(184, 19, 18);
+  border: 2px solid rgb(184, 19, 18, 0.75);
   border-radius: 5px;
+  margin-left: 5px;
 }
 
 @media only screen and (max-width: 600px) {
