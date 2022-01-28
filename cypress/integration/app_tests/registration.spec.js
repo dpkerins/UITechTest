@@ -8,12 +8,12 @@ describe('Registration Page', () => {
     cy.get('#formNationality').should('be.visible');
     cy.get('#password').should('be.visible')
     cy.get('#password-confirm').should('be.visible')
-    cy.contains('Submit').should('be.visible');
+    cy.get('#register-button').should('be.visible');
   })
 
   it('does not redirect to Welcome page on submit if form not filled in', () => {
     cy.visit('/')
-    cy.contains('Submit').click()
+    cy.get('#register-button').click()
     cy.contains('Password')
   })
   
@@ -25,7 +25,7 @@ describe('Registration Page', () => {
     cy.get('select').select('Venezuela')
     cy.get('#password').type('fake_password')
     cy.get('#password-confirm').type('fake_password')
-    cy.contains('Submit').click()
+    cy.get('#register-button').click()
     cy.contains('New Guy')
     cy.contains('Venezuela')
     cy.contains('0 points')
@@ -39,7 +39,7 @@ describe('Registration Page', () => {
     cy.get('select').select('Venezuela')
     cy.get('#password').type('fake_password')
     cy.get('#password-confirm').type('different_password')
-    cy.contains('Submit').click()
+    cy.get('#register-button').click()
     cy.contains('Password')
   })
 })

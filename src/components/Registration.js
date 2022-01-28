@@ -89,7 +89,7 @@ export default function Registration(props) {
           <Form.Label>Confirm Password</Form.Label>
           <Form.Control id="password-confirm" type="password" placeholder="Confirm Password" name="passwordconfirm" default="" required/>
         </Form.Group>
-        <Button type="submit" id="button">
+        <Button type="submit" id="register-button">
           Register!
         </Button>
       </Form>

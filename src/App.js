@@ -29,6 +29,13 @@ function App() {
       email: "saanvi@gupta.com",
       points: 110,
       nationality: 'Lithuania'
+    },
+    {
+      name: "Abel",
+      surname: "Gupta",
+      email: "abel@gupta.com",
+      points: 50,
+      nationality: 'India'
     }
   ])
 
