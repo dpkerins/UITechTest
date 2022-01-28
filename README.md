@@ -1,7 +1,7 @@
 ### Overview
--The project was created with React
--Styling was done with React-Bootstrap and plain CSS
--Testing was done with Cypress
+- The project was created with React.
+- Styling was done with React-Bootstrap and plain CSS.
+- Testing was done with Cypress.
 
 ### To run code
 - Run 'npm install' to download dependencies
