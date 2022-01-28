@@ -57,7 +57,10 @@ export default function Registration(props) {
   return (
     <div className="registration">
       <Card style={{ padding: '15px' }} >
-      <Card.Header><h1>Registration</h1></Card.Header>
+        <Card.Header>
+          <h1>Registration</h1>
+          <p>Fill out the form below to join our Tennis Club!</p>
+        </Card.Header>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicName">
           <Form.Label>Name</Form.Label>
@@ -85,7 +88,7 @@ export default function Registration(props) {
           <Form.Control id="password-confirm" type="password" placeholder="Confirm Password" name="passwordconfirm" default="" required/>
         </Form.Group>
         <Button type="submit" id="button">
-          Submit
+          Register!
         </Button>
       </Form>
       </Card>
