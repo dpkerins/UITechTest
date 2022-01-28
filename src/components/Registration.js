@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import useCountries from '../hooks/useCountries';
 import CountryOption from './CountryOption';
 import Card from 'react-bootstrap/Card';
+import bcrypt from 'bcryptjs';
 
 export default function Registration(props) {
   const { setPlayers } = props;
@@ -39,11 +40,12 @@ export default function Registration(props) {
     const passwordConfirm = form.passwordconfirm.value;
 
     if (passwordMatch(password, passwordConfirm)) {
+      const hashPassword = bcrypt.hashSync(password, 8);
       const newMember = {
         name: name,
         surname: surname,
         email: email,
-        password: password,
+        password: hashPassword,
         nationality: nationality,
         points: 0
       }
