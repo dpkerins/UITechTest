@@ -48,6 +48,16 @@
   margin-left: 5px;
 }
 
+.welcome .card-body {
+  padding: 0;
+}
+
+.welcome .card-body .row {
+  margin: 0;
+  padding: 5px;
+  border-bottom: 1px solid rgb(184, 19, 18, 0.5);
+}
+
 @media only screen and (max-width: 600px) {
   #bootstrap-overrides h4 {
     font-size: 16px;
