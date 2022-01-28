@@ -1,11 +1,12 @@
-In the project directory, you can run:
+### Overview
+-The project was created with React
+-Styling was done with React-Bootstrap and plain CSS
+-Testing was done with Cypress
 
-### `npm start`
+### To run code
+- Run 'npm install' to download dependencies
+- Run 'npm start' to run the app. The app can be found at http://localhost:3000/ when the server is running.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-
+ ### To run tests
+ - Cypress was used for testing
+ - Run 'npm e2e' or 'npm test' to run the tests headless
