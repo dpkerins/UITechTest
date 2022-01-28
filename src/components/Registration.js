@@ -20,9 +20,11 @@ export default function Registration(props) {
   };
 
   const [countries] = useCountries();
+  let countryKey = 0;
   const countryOptions = countries.map((country) => {
+    countryKey++;
     return (
-      <CountryOption country={country}/>
+      <CountryOption country={country} key={countryKey}/>
     )
   })
 

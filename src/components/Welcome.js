@@ -10,12 +10,13 @@ export default function Welcome(props) {
     return b.points - a.points;
   });
 
+  let playerKey = 0;
   const playerDivList = players.map((player) => {
+    playerKey++;
     return (
-      <Player player={player}/>
+      <Player player={player} key={playerKey}/>
     )
   })
-  console.log(playerDivList);
 
   return (
     <div className="welcome">
